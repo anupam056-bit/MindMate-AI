@@ -1,6 +1,6 @@
 # 🧠 MindMate: AI-Powered Student Wellness Companion
 
-**Live Demo:** [Click Here to Chat with MindMate](https://mindmate-ai-techsquad.streamlit.app/))  
+**Live Demo:** [Click Here to Chat with MindMate](https://mindmate-ai-techsquad.streamlit.app/)
 
 
 ## 📌 Problem Statement
