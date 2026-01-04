@@ -1,18 +1,25 @@
 import streamlit as st
 import google.generativeai as genai
+import os
 
 # 1. Page Configuration
 st.set_page_config(page_title="MindMate", page_icon="🧠")
 st.title("🧠 MindMate")
 st.write("I am your student assistant. I'm ready to help!")
 
-# 2. AUTOMATIC API KEY HANDLING
-# This checks if the key is stored securely in Streamlit Cloud
+# ---------------------------------------------------------
+# 2. AUTOMATIC API KEY HANDLING (The "Invisible" Login)
+# ---------------------------------------------------------
+# Check if the key is in the "Secrets" vault (Streamlit Cloud)
 if "GOOGLE_API_KEY" in st.secrets:
     api_key = st.secrets["GOOGLE_API_KEY"]
+# Check if running locally on your laptop
+elif "GOOGLE_API_KEY" in os.environ:
+    api_key = os.environ["GOOGLE_API_KEY"]
+# If neither, show the box (Fallback)
 else:
-    # Fallback: If no secret is found (like when running locally), ask for it
-    api_key = st.sidebar.text_input("Enter API Key (for testing):", type="password")
+    api_key = st.sidebar.text_input("Enter API Key:", type="password")
+# ---------------------------------------------------------
 
 # 3. Logic
 if api_key:
@@ -25,7 +32,6 @@ if api_key:
         # Chat history
         if "messages" not in st.session_state:
             st.session_state.messages = []
-            # System instruction
             st.session_state.messages.append({
                 "role": "user", 
                 "parts": ["Act as a compassionate student mental health assistant. Be empathetic, short, and helpful."]
@@ -56,4 +62,4 @@ if api_key:
     except Exception as e:
         st.error(f"Error: {e}")
 else:
-    st.info("ℹ️ Waiting for API Key configuration...")
+    st.info("ℹ️ Waiting for API Key...")
