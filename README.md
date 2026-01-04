@@ -1,7 +1,7 @@
 # 🧠 MindMate: AI-Powered Student Wellness Companion
 
-**Live Demo:** [Click Here to Chat with MindMate](https://your-app-link.streamlit.app)  
-*(Replace the link above with your actual Streamlit URL)*
+**Live Demo:** [Click Here to Chat with MindMate](https://mindmate-ai-techsquad.streamlit.app/))  
+
 
 ## 📌 Problem Statement
 Students today face immense academic pressure, leading to burnout and anxiety. Many hesitate to seek professional help due to stigma, cost, or lack of availability.
