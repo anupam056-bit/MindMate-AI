@@ -36,4 +36,4 @@ Students today face immense academic pressure, leading to burnout and anxiety. M
     ```
 
 ---
-*Submitted for [Name of Hackathon]*
+*Submitted for TechSprint*
